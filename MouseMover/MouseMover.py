@@ -106,6 +106,7 @@ def main():
                             time.sleep(0.2)
 
                         keyboard.send("space")
+                        time.sleep(0.2)
                         keyboard.send("alt+tab")
                         time.sleep(0.2)
             case "X":
