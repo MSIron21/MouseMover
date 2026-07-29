@@ -87,7 +87,7 @@ def main():
                             keyboard.send("7")
                             time.sleep(0.2)
                         if liczba[2] == "1":
-                            mkeyboard.send("6")
+                            keyboard.send("6")
                             time.sleep(0.2)
                         if liczba[3] == "1":
                             keyboard.send("5")
