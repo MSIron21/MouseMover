@@ -1,5 +1,8 @@
 from pyHM import mouse
 
+import keyboard
+import time
+
 def main():
     
     print("ready")
@@ -8,7 +11,7 @@ def main():
 
     
     while(True):
-        user_input = input("valid: 128, 64, 32, 16, 8, 4, 2, 1, move, X: ")
+        user_input = input("valid: 128, 64, 32, 16, 8, 4, 2, 1, move, key, X: ")
         
         match user_input:
             case "128":
@@ -62,6 +65,48 @@ def main():
                             mouse.click(x=x64, y=y64)
                         if liczba[7] == "1":
                             mouse.click(x=x128, y=y128)
+            case "key":
+                while(True):
+                    user_number = input("valid: Int, X: ")
+                    if user_number == "X":
+                        break
+                    else:
+                        liczba = list(bin(int(user_number))[2:][::-1])
+                        needed = 8
+                        dodac = needed - len(liczba)
+                        if dodac > 0:
+                            liczba.extend(['0'] * dodac)
+                        
+                        keyboard.send("alt+tab")
+                        time.sleep(0.2)
+
+                        if liczba[0] == "1":
+                            keyboard.send("8")
+                            time.sleep(0.2)
+                        if liczba[1] == "1":
+                            keyboard.send("7")
+                            time.sleep(0.2)
+                        if liczba[2] == "1":
+                            mkeyboard.send("6")
+                            time.sleep(0.2)
+                        if liczba[3] == "1":
+                            keyboard.send("5")
+                            time.sleep(0.2)
+                        if liczba[4] == "1":
+                            keyboard.send("4")
+                            time.sleep(0.2)
+                        if liczba[5] == "1":
+                            keyboard.send("3")
+                            time.sleep(0.2)
+                        if liczba[6] == "1":
+                            keyboard.send("2")
+                            time.sleep(0.2)
+                        if liczba[7] == "1":
+                            keyboard.send("1")
+                            time.sleep(0.2)
+
+                        keyboard.send("alt+tab")
+                        time.sleep(0.2)
             case "X":
                 break
             case _:
